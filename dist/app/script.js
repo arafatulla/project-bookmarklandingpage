@@ -77,7 +77,24 @@ featureBtn.addEventListener('click', (e)=>{
     }
 })
 
-function simPle(){
 
-}
+
+const question = document.querySelector('.faq__body');
+const singleQ = document.querySelector('.faq__body').children;
+const arrow = document.querySelector('.question img');
+
+question.addEventListener('click', (e)=>{
+    let Q = e.target;
+    
+    if(Q.classList.contains('active')){
+        Q.classList.remove('active')        
+    }else{
+        for(let i = 0; i < singleQ.length; i++){
+            if(singleQ[i].classList.contains('active')){
+                singleQ[i].classList.remove('active');
+            }
+        }
+        Q.classList.add('active')
+    }
+})
 
